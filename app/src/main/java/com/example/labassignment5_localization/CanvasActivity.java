@@ -13,6 +13,7 @@ public class CanvasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canvas);
 
+        setTitle("ColorActivity");
         final ConstraintLayout lay = findViewById(R.id.layout2);
         Intent intent = getIntent();
         String col = intent.getStringExtra("HOLDER");

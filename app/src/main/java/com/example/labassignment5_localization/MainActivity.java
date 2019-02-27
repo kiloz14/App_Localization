@@ -1,6 +1,7 @@
 package com.example.labassignment5_localization;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,8 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("PaletteActivity");
 
-        spinner.setAdapter(new CustomAdapter(this)) ;
+        Resources res = getResources();
+        String [] color = res.getStringArray(R.array.color_array);
+        final String [] background = res.getStringArray(R.array.color_array_background);
 
+        spinner.setAdapter(new CustomAdapter(this, String color);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

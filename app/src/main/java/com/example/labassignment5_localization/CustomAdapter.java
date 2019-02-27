@@ -10,10 +10,11 @@ import android.widget.TextView;
 public class CustomAdapter extends BaseAdapter{
 
     private Context context;
-    String color[] = new String[]{"blue","magenta","red","yellow", "green", "black","darkgray","cyan","lightgray", "gray" };
+    String color[] ;
+        // new String[]{"blue","magenta","red","yellow", "green", "black","darkgray","cyan","lightgray", "gray" };
 
 
-    public CustomAdapter(Context context){
+    public CustomAdapter(Context context, String color, String background){
         this.context = context;
     }
 
