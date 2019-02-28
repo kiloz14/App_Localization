@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         String [] color = res.getStringArray(R.array.color_array);
         final String [] background = res.getStringArray(R.array.color_array_background);
 
-        spinner.setAdapter(new CustomAdapter(this, String color);
+        spinner.setAdapter(new CustomAdapter(this, color , background));
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
