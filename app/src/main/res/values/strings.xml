@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LabAssignment5_Localization</string>
+    <string name="app_name" translatable="false">LabAssignment5_Localization  </string>
 
     <string-array name="color_array">
         <item>"blue"</item>

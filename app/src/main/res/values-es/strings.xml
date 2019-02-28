@@ -11,13 +11,13 @@
         <item>"cian"</item>
     </string-array>
     <string-array name="color_array_background">
-        <item>"azul"</item>
+        <item>"blue"</item>
         <item>"magenta"</item>
-        <item>"rojo"</item>
-        <item>"amarillo"</item>
-        <item>"verde"</item>
-        <item>"negro"</item>
-        <item>"gris"</item>
-        <item>"cian"</item>
+        <item>"red"</item>
+        <item>"yellow"</item>
+        <item>"green"</item>
+        <item>"black"</item>
+        <item>"gray"</item>
+        <item>"cyan"</item>
     </string-array>
 </resources>
