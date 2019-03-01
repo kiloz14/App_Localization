@@ -3,22 +3,18 @@
 
     <string-array name="color_array">
         <item>"blue"</item>
-        <item>"magenta"</item>
         <item>"red"</item>
         <item>"yellow"</item>
         <item>"green"</item>
         <item>"black"</item>
         <item>"gray"</item>
-        <item>"cyan"</item>
-    </string-array>
+       </string-array>
     <string-array name="color_array_background">
     <item>"blue"</item>
-    <item>"magenta"</item>
     <item>"red"</item>
     <item>"yellow"</item>
     <item>"green"</item>
     <item>"black"</item>
     <item>"gray"</item>
-    <item>"cyan"</item>
-    </string-array>
+   </string-array>
 </resources>

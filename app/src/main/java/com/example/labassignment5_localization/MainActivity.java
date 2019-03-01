@@ -38,11 +38,12 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = new Intent(MainActivity.this, CanvasActivity.class);
-                String colSelected = spinner.getSelectedItem().toString();
+                //String colSelected = spinner.getSelectedItem().toString();
 
                 if(well){
 
-                    intent.putExtra("HOLDER" , colSelected);
+                   // intent.putExtra("HOLDER" , colSelected);
+                    intent.putExtra("HOLDER" , background[position]);
                     startActivity(intent);
                 }
 

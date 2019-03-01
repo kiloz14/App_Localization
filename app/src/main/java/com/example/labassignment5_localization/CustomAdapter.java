@@ -44,7 +44,7 @@ public class CustomAdapter extends BaseAdapter{
         textView.findViewById(R.id.spinner);
         String colorName = (String) getItem(position);
         textView.setText(colorName.toUpperCase());
-        textView.setBackgroundColor(Color.parseColor(color[position]));
+        textView.setBackgroundColor(Color.parseColor(background[position]));
 
         return textView;
     }
