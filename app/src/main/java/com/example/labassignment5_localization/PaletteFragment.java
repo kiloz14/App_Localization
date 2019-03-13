@@ -1,18 +1,21 @@
 package com.example.labassignment5_localization;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Spinner;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link PaletteFragment.OnFragmentInteractionListener} interface
+ * {@link PaletteFragment.ColorFragmentInterface} interface
  * to handle interaction events.
  * Use the {@link PaletteFragment#newInstance} factory method to
  * create an instance of this fragment.
@@ -27,7 +30,9 @@ public class PaletteFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private OnFragmentInteractionListener mListener;
+    Context context;
+
+    private ColorFragmentInterface mListener;
 
     public PaletteFragment() {
         // Required empty public constructor
@@ -64,25 +69,47 @@ public class PaletteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_palette, container, false);
+        View view = inflater.inflate(R.layout.fragment_palette, container, false);
+
+        Spinner spinner = view.findViewById(R.id.spinner);
+
+        //Create a resources instance to access the color strings in the resources
+        Resources resources = getResources();
+
+        final String spinnerColor[] = resources.getStringArray(R.array.color_array);
+        spinner.setAdapter(new CustomAdapter(context, spinnerColor));
+
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                ((ColorFragmentInterface) context).colorSelected(spinnerColor[position]);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        return view ;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
+
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
+        if (context instanceof ColorFragmentInterface) {
+            mListener = (ColorFragmentInterface) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+                    + " must implement ColorFragmentInterface");
         }
+
+        this.context = context;
     }
 
     @Override
@@ -91,18 +118,9 @@ public class PaletteFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+
+    interface ColorFragmentInterface{
+
+        void colorSelected(String color);
     }
 }

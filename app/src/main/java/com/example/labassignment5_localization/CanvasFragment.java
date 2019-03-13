@@ -1,12 +1,14 @@
 package com.example.labassignment5_localization;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 
 /**
@@ -27,6 +29,7 @@ public class CanvasFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    FrameLayout canvasLayout;
     private OnFragmentInteractionListener mListener;
 
     public CanvasFragment() {
@@ -64,7 +67,9 @@ public class CanvasFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_canvas, container, false);
+        View view = inflater.inflate(R.layout.fragment_canvas,container, false);
+        canvasLayout = view.findViewById(R.id.canvas_layout);
+        return canvasLayout;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -90,7 +95,11 @@ public class CanvasFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
+    public void changeColor(){
 
+        String selectedColor = getArguments().getString("color");
+        canvasLayout.setBackgroundColor(Color.parseColor(selectedColor));
+    }
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated

@@ -10,16 +10,16 @@ import android.widget.TextView;
 public class CustomAdapter extends BaseAdapter{
 
     private Context context;
-    String color[] , background[];
+    String color[] ;
 
 
 
         // new String[]{"blue","magenta","red","yellow", "green", "black","darkgray","cyan","lightgray", "gray" };
 
 
-    public CustomAdapter(Context context, String[] color, String[] background){
+    public CustomAdapter(Context context, String[] color){
         this.color = color;
-        this.background = background;
+        //this.background = background;
         this.context = context;
     }
 
@@ -41,10 +41,10 @@ public class CustomAdapter extends BaseAdapter{
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         final TextView textView = new TextView(context);
-        textView.findViewById(R.id.spinner);
+       // textView.findViewById(R.id.spinner);
         String colorName = (String) getItem(position);
         textView.setText(colorName.toUpperCase());
-        textView.setBackgroundColor(Color.parseColor(background[position]));
+        textView.setBackgroundColor(Color.parseColor(color[position]));
 
         return textView;
     }
