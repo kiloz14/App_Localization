@@ -8,13 +8,16 @@
         <item>"green"</item>
         <item>"black"</item>
         <item>"gray"</item>
-       </string-array>
+    </string-array>
     <string-array name="color_array_background">
-    <item>"blue"</item>
-    <item>"red"</item>
-    <item>"yellow"</item>
-    <item>"green"</item>
-    <item>"black"</item>
-    <item>"gray"</item>
-   </string-array>
+        <item>"blue"</item>
+        <item>"red"</item>
+        <item>"yellow"</item>
+        <item>"green"</item>
+        <item>"black"</item>
+        <item>"gray"</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
